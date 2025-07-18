@@ -1,6 +1,6 @@
-import axios from "axios";
+const axios = require("axios");
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
@@ -28,6 +28,7 @@ export default async function handler(req, res) {
 
     res.status(200).json(response.data);
   } catch (error) {
-    res.status(500).json({ error: "Failed to get token" });
+    console.error("Erro ao gerar token:", error.message);
+    res.status(500).json({ error: "Erro ao gerar token" });
   }
-}
+};
