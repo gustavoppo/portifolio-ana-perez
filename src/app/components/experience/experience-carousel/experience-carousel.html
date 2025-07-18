@@ -13,7 +13,7 @@
       'bg-violet-600 text-white': selectedItemName === item.name,
       'hover:bg-violet-200': selectedItemName !== item.name
     }"
-      (click)="log(item.name)"
+      (click)="updateContent(item)"
     >
       <img class="w-8" [src]="item.image" alt="{{ item.name }}" />
     </div>
@@ -21,11 +21,16 @@
 </p-carousel>
 
 <div class="card-experience">
-  <div>
+  <div class="flex flex-col gap-4 p-7">
     <h3 class="text-3xl text-neutral-100 font-semibold">
       {{ selectedItemName }}
     </h3>
-    <p>{{ currentContent }}</p>
+    <p class="text-xl text-neutral-100">{{ selectedItemDescription}}</p>
+  </div>
+  <div class="project-stack">
+    @for(item of selectedItemReferences;track item){<span class="badge"
+      >{{ item }}</span
+    >}
   </div>
   <div #editorHost class=""></div>
 </div>

@@ -1,15 +1,30 @@
 .card-experience {
   background: #272325bb;
-  padding: 2.5rem;
   border-radius: 16px;
   border: 1px solid #727272;
   display: flex;
-  gap: 2rem;
   flex-direction: column;
   margin-top: 2rem;
+  max-width: 20rem;
 }
 
 .editor-container {
   height: 500px;
   border: 1px solid #ccc;
+}
+
+.project-stack {
+  border-top: 1px solid #727272;
+  border-bottom: 1px solid #727272;
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  background-color: #ef5cec38;
+  color: #ef5ced;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #ef5ced;
 }
