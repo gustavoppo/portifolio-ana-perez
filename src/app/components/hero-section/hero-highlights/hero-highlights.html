@@ -1,0 +1,8 @@
+<section class="flex flex-col items-center justify-center gap-8">
+  @for (hero of hero; track hero){
+  <div class="text-center flex flex-col items-center gap-2">
+    <span class="text-7xl text-neutral-100 font-black">{{hero.highlight}}</span>
+    <span class="text-xl text-neutral-300">{{hero.description}}</span>
+  </div>
+  }
+</section>

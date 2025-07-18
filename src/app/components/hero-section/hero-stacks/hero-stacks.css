@@ -1,0 +1,50 @@
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+}
+
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, #130a13, rgba(18, 16, 18, 0));
+}
+
+.slider::after {
+  right: 0;
+  background: linear-gradient(to left, #160214, rgba(22, 2, 20, 0));
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-10rem * 6));
+  }
+}
+
+.slider {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 3rem;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(10rem * 12);
+}
+
+.slide {
+  height: 100px;
+  width: 100%;
+}

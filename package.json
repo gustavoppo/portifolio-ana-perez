@@ -19,8 +19,22 @@
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.3",
+    "@codemirror/autocomplete": "^6.18.6",
+    "@codemirror/commands": "^6.8.1",
+    "@codemirror/highlight": "^0.19.8",
+    "@codemirror/lang-javascript": "^6.2.4",
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/language": "^6.11.2",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.1",
+    "@primeuix/themes": "^1.2.1",
+    "@tailwindcss/postcss": "^4.1.11",
     "express": "^5.1.0",
+    "monaco-editor": "^0.52.2",
+    "ngx-monaco-editor-v2": "^19.0.2",
+    "primeng": "^20.0.0-rc.1",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.11",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -36,6 +50,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.6",
     "typescript": "~5.8.2"
   }
 }

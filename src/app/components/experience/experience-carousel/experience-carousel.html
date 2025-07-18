@@ -1,0 +1,31 @@
+<p-carousel
+  [value]="items"
+  [numVisible]="3"
+  [numScroll]="3"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-item #item>
+    <div
+      [id]="item.name"
+      class="bg-transparent flex items-center justify-center p-4 rounded-lg w-16 cursor-pointer transition-all"
+      [ngClass]="{
+      'bg-violet-600 text-white': selectedItemName === item.name,
+      'hover:bg-violet-200': selectedItemName !== item.name
+    }"
+      (click)="log(item.name)"
+    >
+      <img class="w-8" [src]="item.image" alt="{{ item.name }}" />
+    </div>
+  </ng-template>
+</p-carousel>
+
+<div class="card-experience">
+  <div>
+    <h3 class="text-3xl text-neutral-100 font-semibold">
+      {{ selectedItemName }}
+    </h3>
+    <p>{{ currentContent }}</p>
+  </div>
+  <div #editorHost class=""></div>
+</div>

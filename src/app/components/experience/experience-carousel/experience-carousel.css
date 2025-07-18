@@ -1,0 +1,15 @@
+.card-experience {
+  background: #272325bb;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #727272;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.editor-container {
+  height: 500px;
+  border: 1px solid #ccc;
+}
