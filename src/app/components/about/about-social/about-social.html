@@ -1,0 +1,10 @@
+<section class="py-12 flex flex-col gap-6 items-center">
+  <div class="flex items-center justify-evenly w-6/7 mb-4">
+    @for(item of socialLinks; track item) {
+    <a [href]="item.url" target="_blank">
+      <img class="hero-icon" [src]="item.icon" alt="{{ item.name }}" />
+    </a>
+    }
+  </div>
+  <button-cta />
+</section>

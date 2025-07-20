@@ -5,6 +5,7 @@ import { HeroHighlights } from './hero-highlights/hero-highlights';
 import { HeroStacks } from './hero-stacks/hero-stacks';
 import { ButtonCta } from '../shared/button-cta/button-cta';
 import { Experience } from '../experience/experience';
+import { About } from '../about/about';
 
 @Component({
   selector: 'hero-section',
@@ -15,6 +16,7 @@ import { Experience } from '../experience/experience';
     HeroStacks,
     ButtonCta,
     Experience,
+    About,
   ],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
