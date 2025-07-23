@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ExperienceCarousel } from './experience-carousel/experience-carousel';
 interface ExperienceDetail {
   title: string;
@@ -12,6 +12,7 @@ interface ExperienceDetail {
   styleUrl: './experience.css',
 })
 export class Experience {
+  @Input() id?: string;
   experienceDetails: ExperienceDetail = {
     title: 'Code',
     description: 'Explore meus códigos',

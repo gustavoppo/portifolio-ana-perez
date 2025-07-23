@@ -6,4 +6,9 @@ import { ImageModule } from 'primeng/image';
   templateUrl: './about-moments.html',
   styleUrl: './about-moments.css',
 })
-export class AboutMoments {}
+export class AboutMoments {
+  moments = [
+    { title: 'Festa junina no DCTA', img: 'assets/img/cta.jpg' },
+    { title: '' },
+  ];
+}

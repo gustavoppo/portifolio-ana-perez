@@ -1,0 +1,28 @@
+<section class="flex flex-col gap-4 p-12 border-t border-neutral-50">
+  <h4 class="text-3xl font-black text-neutral-50">{{persona.name}}</h4>
+  <p class="text-neutral-400">{{persona.description}}</p>
+  <social-links class="w-20" [socialLinks]="socialList" />
+  <div class="flex justify-around gap-4 mt-8">
+    <div>
+      <h4 class="text-3xl font-semibold mb-4 text-neutral-50">Links</h4>
+      <ul class="flex flex-col gap-2">
+        @for(item of pesonalLinks;track item){
+        <li>
+          <a [href]="item.href" class="text-neutral-400">{{item.name}}</a>
+        </li>
+        }
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-3xl font-semibold mb-4 text-neutral-50">Recursos</h4>
+      <ul class="flex flex-col gap-2">
+        @for(item of pesonalResources;track item){
+        <li>
+          <a class="text-neutral-400">{{item.name}}</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <developer />
+</section>

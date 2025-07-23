@@ -1,0 +1,12 @@
+<section class="flex gap-3 items-center">
+  @for(item of socialLinks; track item) {
+  <a
+    [href]="item.url"
+    target="_blank"
+    (mouseover)="item._currentIcon = item.hoverIcon"
+    (mouseout)="item._currentIcon = item.icon"
+  >
+    <img class="hero-icon" [src]="item._currentIcon" alt="{{ item.name }}" />
+  </a>
+  }
+</section>

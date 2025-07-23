@@ -4,17 +4,8 @@
     <h2 class="text-neutral-50 font-bold text-4xl">{{ hero.name }}</h2>
     <p class="text-neutral-400 text-xl">{{ hero.description }}</p>
   </div>
-  <div class="flex items-center justify-center gap-4">
-    <a
-      ><img class="hero-icon" src="../../../assets/icons/linkedin-white.svg"
-    /></a>
-    <a
-      ><img class="hero-icon" src="../../../assets/icons/github-white.svg"
-    /></a>
-    <a
-      ><img class="hero-icon" src="../../../assets/icons/instagram-white.svg"
-    /></a>
-    <a><img class="hero-icon" src="../../../assets/icons/mail-white.svg" /></a>
-  </div>
+
+  <social-links [socialLinks]="socialList" />
+
   <p-button class="w-full" styleClass="w-full" label="Entre em contato" />
 </div>

@@ -1,4 +1,9 @@
-<about-resume />
-<about-spotify />
-<about-moments />
-<about-social />
+<section [attr.id]="id" class="mt-8">
+  <about-resume />
+  <about-spotify />
+  <about-moments />
+  <div class="px-12 py-8 flex flex-col items-center gap-8">
+    <social-links [socialLinks]="socialList" />
+    <button-cta />
+  </div>
+</section>
