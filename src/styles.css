@@ -13,3 +13,17 @@ body {
 .primary-background {
   background-color: #ef5ced;
 }
+
+.noise {
+  position: fixed;
+  z-index: -1;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  background-image: url(assets/img/noise.webp);
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}

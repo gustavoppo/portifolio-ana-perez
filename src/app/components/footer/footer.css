@@ -1,0 +1,8 @@
+.element {
+  border-radius: 1rem;
+  box-shadow: 0 0 250px 332px rgba(255, 255, 255, 0.1);
+  position: relative;
+  top: 0rem;
+  left: 0rem;
+  z-index: -1;
+}

@@ -44,8 +44,20 @@ export class PersonalFooter {
   ];
 
   pesonalResources = [
-    { name: 'Download Currículo', util: 'home' },
-    { name: 'Meu Github', util: 'projects' },
-    { name: 'WhatsApp', util: 'about' },
+    {
+      name: 'Download Currículo',
+      util: 'assets/curriculo.pdf',
+      isDownload: true,
+    },
+    {
+      name: 'Meu Github',
+      util: 'https://github.com/Anapaulapalandi',
+      isDownload: false,
+    },
+    {
+      name: 'WhatsApp',
+      util: 'https://wa.me/+5511975049931',
+      isDownload: false,
+    },
   ];
 }

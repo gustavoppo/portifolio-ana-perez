@@ -4,11 +4,10 @@
     Aqui estão alguns dos meus momentos favoritos:
   </p>
   <ul class="list-disc list-inside">
-    <p-image
-      imageClass="rounded-lg"
-      src="/assets/img/cta.jpg"
-      alt="Image"
-      [preview]="true"
-    />
+    @for(item of moments;track item){
+    <li>
+      <img class="moments-img" [src]=" item.url" [alt]="item.title" />
+    </li>
+    }
   </ul>
 </section>

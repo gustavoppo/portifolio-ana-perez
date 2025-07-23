@@ -16,7 +16,7 @@
 
 .slider::after {
   right: 0;
-  background: linear-gradient(to left, #160214, rgba(22, 2, 20, 0));
+  background: linear-gradient(to left, #120c12, rgba(22, 2, 20, 0));
 }
 
 @keyframes scroll {

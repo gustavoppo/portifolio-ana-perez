@@ -8,7 +8,21 @@ import { ImageModule } from 'primeng/image';
 })
 export class AboutMoments {
   moments = [
-    { title: 'Festa junina no DCTA', img: 'assets/img/cta.jpg' },
-    { title: '' },
+    {
+      title: 'Festa junina no DCTA com a família Perez Palandi',
+      url: 'assets/img/cta.jpg',
+    },
+    {
+      title: 'Ana, Gustavo e o Francisco com uma flor roxa',
+      url: 'assets/img/flor.jpg',
+    },
+    {
+      title: 'Francisco fazendo manha para dormir, deitado no ombro de Ana',
+      url: 'assets/img/apoio.jpg',
+    },
+    {
+      title: 'Escadinha da família Perez Palandi',
+      url: 'assets/img/escada.jpg',
+    },
   ];
 }

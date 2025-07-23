@@ -1,4 +1,4 @@
-<section class="flex flex-col gap-4 p-12 border-t border-neutral-50">
+<footer class="flex flex-col gap-4 p-12 border-t border-neutral-50">
   <h4 class="text-3xl font-black text-neutral-50">{{persona.name}}</h4>
   <p class="text-neutral-400">{{persona.description}}</p>
   <social-links class="w-20" [socialLinks]="socialList" />
@@ -18,11 +18,21 @@
       <ul class="flex flex-col gap-2">
         @for(item of pesonalResources;track item){
         <li>
-          <a class="text-neutral-400">{{item.name}}</a>
+          <a
+            class="text-neutral-400 cursor-pointer hover:underline"
+            [href]="item.util"
+            [attr.download]="item.isDownload ? '' : null"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ item.name }}
+          </a>
         </li>
         }
       </ul>
     </div>
   </div>
   <developer />
-</section>
+</footer>
+
+<span class="element"></span>
