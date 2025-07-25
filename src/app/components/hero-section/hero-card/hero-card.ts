@@ -4,9 +4,10 @@ import {
   SocialLink,
   SocialLinks,
 } from '../../shared/social-links/social-links';
+import { ButtonCta } from '../../shared/button-cta/button-cta';
 @Component({
   selector: 'hero-card',
-  imports: [ButtonModule, SocialLinks],
+  imports: [ButtonModule, SocialLinks, ButtonCta],
   templateUrl: './hero-card.html',
   styleUrl: './hero-card.css',
 })

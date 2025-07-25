@@ -3,7 +3,9 @@
   <about-spotify />
   <about-moments />
   <div class="px-12 py-8 flex flex-col items-center gap-8">
+    @if(!mobile){
     <social-links [socialLinks]="socialList" />
     <button-cta />
+    }
   </div>
 </section>

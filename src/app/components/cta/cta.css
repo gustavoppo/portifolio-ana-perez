@@ -1,0 +1,17 @@
+.cta-button {
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  outline: #f574f3 solid 1px;
+  outline-offset: 2px;
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  &:hover {
+    outline-offset: 3px;
+    background-color: #cf4dcd;
+  }
+}

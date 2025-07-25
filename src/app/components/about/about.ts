@@ -13,6 +13,7 @@ import { ButtonCta } from '../shared/button-cta/button-cta';
 })
 export class About {
   @Input() id?: string;
+  mobile: boolean = true;
   socialList: SocialLink[] = [
     {
       name: 'LinkedIn',
