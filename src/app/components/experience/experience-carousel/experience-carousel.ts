@@ -2,7 +2,9 @@ import { isPlatformBrowser, NgClass } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  computed,
   ElementRef,
+  inject,
   Inject,
   OnInit,
   PLATFORM_ID,
@@ -11,6 +13,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'primeng/carousel';
 import { GitHub } from '../../../services/github';
+import { ViewportService } from '../../../services/viewport';
 
 interface ExperienceItem {
   name: string;
@@ -23,16 +26,16 @@ interface ExperienceItem {
 @Component({
   selector: 'experience-carousel',
   standalone: true,
-  imports: [CarouselModule, NgClass, FormsModule],
+  imports: [CarouselModule, NgClass],
   templateUrl: './experience-carousel.html',
   styleUrls: ['./experience-carousel.css'],
 })
 export class ExperienceCarousel implements OnInit, AfterViewInit {
   @ViewChild('editorHost', { static: true })
   editorHost!: ElementRef<HTMLDivElement>;
-
+  public viewport: ViewportService = inject(ViewportService);
   private editorView?: any;
-
+  readonly largeDisplay = computed(() => this.viewport.screenWidth() < 1023);
   items: ExperienceItem[] = [];
   responsiveOptions: any[] | undefined;
   selectedItemName: string = '';
@@ -48,18 +51,20 @@ export class ExperienceCarousel implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.items = [
       {
-        name: 'Experiência 1',
-        description: 'Descrição da experiência 1',
+        name: 'Sistema APS ',
+        description:
+          'Este projeto foi desenvolvido como parte de um teste técnico para a vaga de estágio na empresa RDI. O objetivo é simular o processo automatizado de montagem de bebidas, realizando validações e configurações com base no tipo de pedido.',
         image: 'assets/icons/python-white.svg',
-        references: ['Python', 'Django', 'Flask'],
+        references: ['Python'],
         rawUrl:
           'https://raw.githubusercontent.com/Anapaulapalandi/rdi-abs/refs/heads/main/rdi-abs.py',
       },
       {
-        name: 'Experiência 2',
-        description: 'Descrição da experiência 2',
+        name: 'Calculadora',
+        description:
+          'Este projeto é uma calculadora simples desenvolvida em Python.',
         image: 'assets/icons/python-white.svg',
-        references: ['Python', 'Django', 'Flask'],
+        references: ['Python'],
         rawUrl:
           'https://raw.githubusercontent.com/Anapaulapalandi/primeiro_projeto/refs/heads/master/calculadora.py',
       },

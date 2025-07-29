@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Button } from 'primeng/button';
 import { SocialLink, SocialLinks } from '../shared/social-links/social-links';
 
 @Component({
   selector: 'cta',
-  imports: [Button, SocialLinks],
+  imports: [SocialLinks],
   templateUrl: './cta.html',
   styleUrl: './cta.css',
 })
 export class Cta {
+  @Input() id?: string;
+
   socialList: SocialLink[] = [
     {
       name: 'LinkedIn',

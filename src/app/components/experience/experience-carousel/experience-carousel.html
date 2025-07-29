@@ -1,3 +1,4 @@
+@if(largeDisplay()){
 <p-carousel
   [value]="items"
   [numVisible]="3"
@@ -19,18 +20,38 @@
     </div>
   </ng-template>
 </p-carousel>
+}
 
-<div class="card-experience">
-  <div class="flex flex-col gap-4 p-7">
-    <h3 class="text-3xl text-neutral-100 font-semibold">
-      {{ selectedItemName }}
-    </h3>
-    <p class="text-xl text-neutral-100">{{ selectedItemDescription}}</p>
+<div class="flex gap-4">
+  <div class="flex flex-col gap-4">
+    @for(item of items; track item){
+    <div
+      class="card-code"
+      (click)="updateContent(item)"
+      [ngClass]="{ 'active': selectedItemName === item.name }"
+    >
+      <img class="w-12 self-start" [src]="item.image" alt="{{ item.name }}" />
+      <div class="flex flex-col gap-2">
+        <h3 class="text-2xl text-neutral-100 font-semibold">{{ item.name }}</h3>
+        <p class="text-neutral-200 text-sm">{{ item.description }}</p>
+      </div>
+    </div>
+    }
   </div>
-  <div class="project-stack">
-    @for(item of selectedItemReferences;track item){<span class="badge"
-      >{{ item }}</span
-    >}
+  <div class="card-experience">
+    <div class="flex flex-col gap-4 p-7">
+      <h3 class="text-3xl lg:text-4xl text-neutral-100 font-semibold">
+        {{ selectedItemName }}
+      </h3>
+      <p class="text-xl lg:text-base text-neutral-100">
+        {{ selectedItemDescription}}
+      </p>
+    </div>
+    <div class="project-stack">
+      @for(item of selectedItemReferences;track item){<span class="badge"
+        >{{ item }}</span
+      >}
+    </div>
+    <div #editorHost class="h-[30rem]"></div>
   </div>
-  <div #editorHost class=""></div>
 </div>

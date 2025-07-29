@@ -1,11 +1,32 @@
 .card-experience {
   background: #272325bb;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
   border: 1px solid #727272;
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   max-width: 20rem;
+  width: 100%;
+}
+
+.card-code {
+  background: #272325bb;
+  border-radius: 16px;
+  border: 1px solid #727272;
+  display: flex;
+  gap: 1rem;
+  width: 20rem;
+  padding: 1rem;
+  &:hover {
+    background: #ef5cec3f;
+    border-color: #ef5ced;
+  }
+
+  &.active {
+    border-color: #ef5cec8f;
+    background: #ef5cec3f;
+    color: #121012;
+  }
 }
 
 .editor-container {
@@ -27,4 +48,16 @@
   padding: 0.25rem 1rem;
   border-radius: 9999px;
   border: 1px solid #ef5ced;
+}
+
+@media screen and (min-width: 768px) {
+  .card-experience {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-experience {
+    margin-top: 0;
+  }
 }
