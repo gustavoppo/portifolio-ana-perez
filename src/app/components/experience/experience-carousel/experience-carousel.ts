@@ -12,7 +12,6 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'primeng/carousel';
-import { GitHub } from '../../../services/github';
 import { ViewportService } from '../../../services/viewport';
 
 interface ExperienceItem {
@@ -43,21 +42,17 @@ export class ExperienceCarousel implements OnInit, AfterViewInit {
   selectedItemReferences: string[] = [];
   selectedItemRawUrl: string = '';
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private githubService: GitHub
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     this.items = [
       {
-        name: 'Sistema APS ',
+        name: 'Sistema ABS ',
         description:
           'Este projeto foi desenvolvido como parte de um teste técnico para a vaga de estágio na empresa RDI. O objetivo é simular o processo automatizado de montagem de bebidas, realizando validações e configurações com base no tipo de pedido.',
         image: 'assets/icons/python-white.svg',
         references: ['Python'],
-        rawUrl:
-          'https://raw.githubusercontent.com/Anapaulapalandi/rdi-abs/refs/heads/main/rdi-abs.py',
+        rawUrl: 'assets/code/rdi-abs.py',
       },
       {
         name: 'Calculadora',
@@ -65,16 +60,7 @@ export class ExperienceCarousel implements OnInit, AfterViewInit {
           'Este projeto é uma calculadora simples desenvolvida em Python.',
         image: 'assets/icons/python-white.svg',
         references: ['Python'],
-        rawUrl:
-          'https://raw.githubusercontent.com/Anapaulapalandi/primeiro_projeto/refs/heads/master/calculadora.py',
-      },
-      {
-        name: 'Experiência 3',
-        description: 'Descrição da experiência 3',
-        image: 'assets/icons/python-white.svg',
-        references: ['Python', 'Django', 'Flask'],
-        rawUrl:
-          'https://raw.githubusercontent.com/Anapaulapalandi/rdi-abs/refs/heads/main/rdi-abs.py',
+        rawUrl: 'assets/code/calculadora.py',
       },
     ];
 
@@ -98,19 +84,17 @@ export class ExperienceCarousel implements OnInit, AfterViewInit {
     this.selectedItemDescription = item.description;
     this.selectedItemReferences = item.references;
     this.selectedItemRawUrl = item.rawUrl;
-
-    this.githubService.fetchRawFile(item.rawUrl).subscribe((code) => {
-      const state = this.editorView?.state.update({
-        changes: {
-          from: 0,
-          to: this.editorView.state.doc.length,
-          insert: code,
-        },
-      });
-      if (state) this.editorView?.update([state]);
-    });
   }
-
+  private async fetchCodeContent(url: string): Promise<string> {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.error(
+        `Erro ao carregar o código de ${url}: ${response.statusText}`
+      );
+      return '// Erro ao carregar o conteúdo';
+    }
+    return await response.text();
+  }
   async ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       const [
@@ -163,12 +147,10 @@ export class ExperienceCarousel implements OnInit, AfterViewInit {
         { tag: tags.comment, color: '#6A9955', fontStyle: 'italic' },
         { tag: tags.variableName, color: '#9CDCFE' },
       ]);
-      const rawCode = await this.githubService
-        .fetchRawFile(this.selectedItemRawUrl)
-        .toPromise();
+      const code = await this.fetchCodeContent(this.selectedItemRawUrl);
       this.editorView = new EditorView({
         state: EditorState.create({
-          doc: rawCode,
+          doc: code,
           extensions: [
             lineNumbers(),
             highlightActiveLine(),

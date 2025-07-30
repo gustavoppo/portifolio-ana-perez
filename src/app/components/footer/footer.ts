@@ -40,7 +40,6 @@ export class PersonalFooter {
     { name: 'Home', href: '#home' },
     { name: 'Projetos', href: '#projects' },
     { name: 'Sobre mim', href: '#about' },
-    { name: 'Contato', href: '#contact' },
   ];
 
   pesonalResources = [
